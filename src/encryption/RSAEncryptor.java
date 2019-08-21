@@ -112,6 +112,9 @@ public class RSAEncryptor implements Encryptor {
         return new String(((new BigInteger(message)).modPow(d, n)).toByteArray());
     }
 
+    /**
+     * Decrypts a byte[][] to a String one byte[] at a time by raising each byte[] to the power of d mod n
+     * */
     @Override
     public String decrypt(byte[][] message) throws EncryptionException {
         String str = "";
